@@ -1,9 +1,5 @@
-import Image from "next/image";
+import { redirect } from "next/navigation";
 
 export default function Home() {
-  return (
-    <div className="flex">
-      <h1 className="text-color-neutral">Welcome to recipy!!</h1>
-    </div>
-  );
+  redirect("/layouts/landingpage/");
 }
