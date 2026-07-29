@@ -1,13 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
+import bcrypt from "bcrypt"
 import pool from "@/lib/db";
-
+import { randomUUID } from "crypto";
 export async function POST(req: NextRequest) {
-  const { username, password } = await req.json();
-
+  const { username, password} = await req.json();
+  const hash = await bcrypt.hash(password,12);
+  const id = randomUUID();
   try {
     await pool.query(
-      'INSERT INTO "User" ("userName", "userPassword") VALUES ($1, $2)',
-      [username, password]
+      'INSERT INTO "User" ("userName", "userPassword" ,"userId") VALUES ($1,$2,$3)',
+      [username, hash ,id]
     );
     return NextResponse.json({ ok: true });
   } catch (error) {

@@ -1,8 +1,9 @@
 "use client"
-export default function RecipeSquare(){
+
+export default function RecipeView(){
     return(
         <div>
-
+            
         </div>
     )
 }

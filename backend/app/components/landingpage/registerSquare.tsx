@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import NotGlass from "@/app/styles/notglass";
+import {randomUUID} from "crypto"
 
 export default function RegisterSquare() {
   const [username, setUsername] = useState("");
@@ -18,7 +19,7 @@ export default function RegisterSquare() {
       const res = await fetch("/api/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, password }),
+        body: JSON.stringify({ username, password}),
       });
       const data = await res.json();
       if (data.ok) {

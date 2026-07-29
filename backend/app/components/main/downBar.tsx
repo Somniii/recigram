@@ -1,3 +1,4 @@
+import SearchBar from "./searchBar"
 export default function upBar(){
     return(
         <>
