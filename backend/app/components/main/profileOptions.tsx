@@ -1,7 +1,7 @@
-export default function profileOptions(){
+export default function ProfileOptions(){
     return(
         <div>
-            
+
         </div>
     )
 }

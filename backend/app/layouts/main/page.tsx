@@ -1,7 +1,8 @@
 import { redirect } from "next/navigation";
 import { getSession } from "@/lib/auth";
 import pool from "@/lib/db";
-
+import RecipeSquare from "@/app/components/main/recipeSquare";
+import DownBar from "@/app/components/main/downBar"
 export default async function MainPage() {
   const session = await getSession();
 
@@ -22,8 +23,16 @@ export default async function MainPage() {
     console.log("no hay resultados")
   }
   return (
-    <div>
+    <div >
       <h1>Bienvenido, {user.userName}</h1>
+      <div className="flex justify-center">
+        <RecipeSquare></RecipeSquare>
+        
+      </div>
+      <div className="fixed bottom-0 left-0 w-full"    >
+        <DownBar></DownBar>
+      </div>
+
     </div>
   );
 }
