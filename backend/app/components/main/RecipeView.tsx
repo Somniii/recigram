@@ -1,25 +1,19 @@
 "use client"
-
 import NotGlass from "@/app/styles/notglass"
-
-export default function RecipeView(){
+interface recipeProps{
+    recipeTitle: string,
+    recipeSteps: string,
+    recipeIngredients: string;
+    idUser : string;
+}
+export default function RecipeView({recipeTitle,recipeIngredients,recipeSteps,idUser}:recipeProps){
     return(
         <NotGlass className="mb-4">
-            <p className="text-black">Hola soy una prueba</p>
-            <p className="text-black">Hola soy una prueba</p>
-            <p className="text-black">Hola soy una prueba</p>
-            <p className="text-black">Hola soy una prueba</p>
-            <p className="text-black">Hola soy una prueba</p>
-            <p className="text-black">Hola soy una prueba</p>
-            <p className="text-black">Hola soy una prueba</p>
-            <p className="text-black">Hola soy una prueba</p>
-            <p className="text-black">Hola soy una prueba</p>
-            <p className="text-black">Hola soy una prueba</p>
-            <p className="text-black">Hola soy una prueba</p>
-            <p className="text-black">Hola soy una prueba</p>
-            <p className="text-black">Hola soy una prueba</p>
-            <p className="text-black">Hola soy una prueba</p>
-            <p className="text-black">Hola soy una prueba</p>
+            <div>
+                <h2>{recipeTitle}</h2>
+                <p>{recipeSteps}</p>
+                <p>{recipeIngredients}</p>
+            </div>
         </NotGlass>
     )
 }
